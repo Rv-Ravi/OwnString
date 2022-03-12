@@ -15,4 +15,8 @@ int main(){
     Own::string str4 = Own::concat("Hi ","Hello");
 
     std::cout << str4 << " " <<str3.subStr(2,5,true) <<std::endl;
+
+
+    str4 += str3;
+    std::cout << str4 << std::endl;
 }

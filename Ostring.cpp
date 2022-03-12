@@ -144,6 +144,18 @@ char Own::string::operator[](size_t index){
         exit(-1);
     }
 }
+Own::string& Own::string::operator+=(const Own::string& str){
+    if (this != &str)
+    {
+        size_t strLen1 = this->m_length; size_t strLen2 = str.m_length;
+        char* data = new char[strLen1 + strLen2 + 1];
+        std::memcpy(data,this->m_str,strLen1 + 1);
+        std::memcpy(data + strLen1, str.getStr(),strLen2 + 1);
+        this->m_str = std::move(data);
+        this->m_length = strLen1 + strLen2;
+    }
+    return *this;
+}
 
 
 
