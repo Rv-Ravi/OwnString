@@ -85,6 +85,8 @@ namespace Own{
 
             //functions
             string subStr(size_t s_index,size_t e_index,bool flag = false);
+            bool insert(size_t index,const string& str);
+
 
             
 

@@ -157,7 +157,34 @@ Own::string& Own::string::operator+=(const Own::string& str){
     return *this;
 }
 
-
+bool Own::string::insert(size_t index,const Own::string& str){
+    if (index < 0 || index >= this->m_length)
+        return false;
+    else{
+        if (index == 0){
+            Own::string st = Own::concat(str.m_str,this->m_str);
+            this->m_str = std::move(st.m_str);
+            this->m_length = st.m_length;
+            st.clear();
+        }
+        else if(index == this->m_length - 1){
+            Own::string st = Own::concat(this->m_str,str.m_str);
+            this->m_str = std::move(st.m_str);
+            this->m_length = st.m_length;
+            st.clear();
+        }
+        else{
+            size_t length = this->m_length + str.m_length;
+            char* data = new char[length + 1];
+            std::memcpy(data,this->m_str,index);
+            std::memcpy(data + index, str.m_str,str.m_length);
+            std::memcpy(data + index + str.m_length, this->m_str + index,this->m_length - index + 1);
+            this->m_str = std::move(data);
+            this->m_length = length;
+        }
+        return true;
+    }
+}
 
 
 
