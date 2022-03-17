@@ -187,6 +187,12 @@ bool Own::string::insert(size_t index,const Own::string& str){
     }
 }
 
+bool Own::string::operator==(const Own::string& str){
+    if (this->m_length == str.m_length && std::strcmp(this->m_str,str.m_str) >= 0)
+        return true;
+    else
+        return false;
+}
 
 
 

@@ -1,13 +1,18 @@
 #include "Ostring.h"
 
+
+
 int main(){
-    Own::string str1("hello");
-    Own::string str2("Friends");
+
+    Own::string str1("Ravi ");
+    Own::string str2("Ravi ");
 
     std::cout << str1 << " " << str2 << std::endl;
 
     Own::string str3;
     str3 = str1 + str2;
+
+    std::cout << std::boolalpha << (str1 == str2) << std::endl;
 
     std::cout << str3 << std::endl;
 
@@ -19,7 +24,7 @@ int main(){
     str4 += str3;
     std::cout << str4 << std::endl;
 
-    str4.insert(str4.length()," Madam");
+    str4.insert(str4.length() - 1," Sir");
 
     std::cout << str4 << std::endl;
 }
