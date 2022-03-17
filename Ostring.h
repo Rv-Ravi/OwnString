@@ -82,6 +82,7 @@ namespace Own{
             string& operator=(string && str);
             char operator[](size_t index);
             string& operator+=(const string& str);
+            bool operator==(const string& str);
 
             //functions
             string subStr(size_t s_index,size_t e_index,bool flag = false);
