@@ -27,4 +27,6 @@ int main(){
     str4.insert(str4.length() - 1," Sir");
 
     std::cout << str4 << std::endl;
+
+    std::cout << " This is simple print end function\n";
 }
