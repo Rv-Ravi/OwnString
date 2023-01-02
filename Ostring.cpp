@@ -182,6 +182,7 @@ bool Own::string::insert(size_t index,const Own::string& str){
             this->m_str = std::move(data);
             this->m_length = length;
         }
+        std::cout << "Hello world\n";
         return true;
     }
 }
