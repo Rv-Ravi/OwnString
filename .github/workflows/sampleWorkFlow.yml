@@ -15,6 +15,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+
+      - name: useother
+        uses: OwnString/workflowOnCall@v1
+        with:
+          value1: Ravi
+          value2: shankar
         
       - name: step1
         run: |
