@@ -3,7 +3,7 @@ name: Sample workflow
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   value: Ravishankar
