@@ -15,6 +15,6 @@ jobs:
     steps:
       - name: step1
         run: |
-          echo $value
+          echo ${{ env.value }}
 
       
