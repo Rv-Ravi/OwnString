@@ -21,6 +21,7 @@ jobs:
           echo ${{ env.value }}
   MySceondJob:
     name: mysecondJob
+    needs: [MyFirstJob]
     uses: ./.github/workflows/workflowOnCall.yaml
     with:
       value1: Ravi
