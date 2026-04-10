@@ -24,6 +24,6 @@ jobs:
     uses: ./.github/workflows/workflowOnCall.yaml
     with:
       value1: Ravi
-      value2: shankar
+      value2: 26
 
       
