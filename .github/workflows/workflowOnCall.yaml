@@ -2,6 +2,11 @@ name: workflowOn Call
 
 on:
   workflow_call:
+    outputs:
+      mainOut: 
+        value: ${{ jobs.sampleJObs2.outputs.outName }}
+      mainAge:
+        value: ${{ jobs.sampleJObs2.outputs.outAge }}
     inputs:
       value1:
         description: This is used to print the value
@@ -28,8 +33,13 @@ jobs:
   
   sampleJObs2:
     runs-on: ubuntu-latest
+    outputs:
+      outName: ${{ steps.onlyRun.outputs.name }}
+      outAge: ${{ steps.onlyRun.outputs.age }}
     steps:
       - name: OnlyRun
+        id: onlyRun
         run: |
-          echo "Runs only when value3 is ${{ inputs.value3 }}, ${{ inputs.value1 }}, ${{inputs.value2 }}"
+          echo "name=${{ inputs.value1 }}" >> $GITHUB_OUTPUT
+          echo "age=${{ inputs.value2 }}" >> $GITHUB_OUTPUT
       
