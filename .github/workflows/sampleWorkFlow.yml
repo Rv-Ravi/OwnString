@@ -15,15 +15,15 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-
-      - name: useother
-        uses: ./.github/workflows/workflowOnCall.yaml
-        with:
-          value1: Ravi
-          value2: shankar
         
       - name: step1
         run: |
           echo ${{ env.value }}
+  MySceondJob:
+    name: mysecondJob
+    uses: ./.github/workflows/workflowOnCall.yaml
+    with:
+      value1: Ravi
+      value2: shankar
 
       
