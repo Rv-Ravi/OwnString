@@ -1,20 +1,20 @@
+name: Sample workflow
 
-name: Sample Workflow
-
-on: 
+on:
   push:
-    branches: ["master"]
-  workflow_dispatch:
+    branches:
+      -- main
+
+env:
+  value: Ravishankar
 
 jobs:
-  Build:
-    name: Build
-    runs-on: ubuntu-latest
-
+  MyFirstJob:
+    name: myfirstJob
+    runs-on: ubuntu-22.04
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-        
-      - name: command
-        run: echo "This is my first github action workflow"
+      - name: step1
+        run: |
+          echo $value
+
       
