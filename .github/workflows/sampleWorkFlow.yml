@@ -13,6 +13,9 @@ jobs:
     name: myfirstJob
     runs-on: ubuntu-22.04
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        
       - name: step1
         run: |
           echo ${{ env.value }}
