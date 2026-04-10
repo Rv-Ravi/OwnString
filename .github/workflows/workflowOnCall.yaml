@@ -1,0 +1,35 @@
+name: workflowOn Call
+
+on:
+  workflow_call:
+    inputs:
+      value1:
+        description: This is used to print the value
+        type: string
+        required: true
+      value2:
+        description: This is used to print value2
+        type: number
+        required: true
+      value3:
+        description: This is used to print value3
+        type: boolean
+        default: false
+        required: false
+
+jobs:
+  sampleJob:
+    if: ${{ inputs.value3 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: OnlyRun
+        run: |
+          echo "Runs only when value3 is ${{ inputs.value3 }}"
+  
+  sampleJObs2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: OnlyRun
+        run: |
+          echo "Runs only when value3 is ${{ inputs.value3 }}, ${{ inputs.value1 }}, ${{inputs.value2 }}"
+      
